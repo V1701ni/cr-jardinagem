@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,177 +6,647 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CR Jardinagem | Jardinagem em Curitiba</title>
 <meta name="description" content="CR Jardinagem: dupla de pai e filho que cuida do seu jardim com capricho, pontualidade e preço acessível em Curitiba. Agende uma visita e receba um orçamento sem compromisso.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --g:#173f2a;
-  --cream:#f3f5ea;
-  --band:#e5edd8;
-  --hl:#e1ebd0;
-  --wa:#25d366;
-  --tx:#4b5a50;
-  --bd:#dde3d0;
-  --serif:'Fraunces',Georgia,'Times New Roman',serif;
-  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+:root {
+  --g: #173f2a;
+  --cream: #f3f5ea;
+  --band: #e5edd8;
+  --hl: #e1ebd0;
+  --wa: #25d366;
+  --tx: #4b5a50;
+  --bd: #dde3d0;
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--tx);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--serif);color:var(--g);margin:0;font-weight:700}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--tx);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  color: var(--g);
+  margin: 0;
+  font-weight: 700;
+}
 
 /* Botões */
-.btn{display:inline-block;background:var(--wa);color:#0b2e18;font-family:var(--sans);font-weight:700;font-size:14px;text-decoration:none;text-align:center;border-radius:8px;padding:13px 28px;box-shadow:0 0 22px rgba(37,211,102,.35);transition:transform .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn-sm{font-size:12px;padding:8px 16px;box-shadow:none;white-space:nowrap}
-.btn-full{display:block;width:100%;box-shadow:none;margin-top:20px}
+
+.btn {
+  display: inline-block;
+  background: var(--wa);
+  color: #0b2e18;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  padding: 13px 28px;
+  box-shadow: 0 0 22px rgba(37,211,102,.35);
+  transition: transform .15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  font-size: 12px;
+  padding: 8px 16px;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+  box-shadow: none;
+  margin-top: 20px;
+}
 
 /* Topo + hero */
-.hero{background:var(--g);color:#fff;position:relative;padding-bottom:56px}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:-23px;height:24px;z-index:2;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='24' viewBox='0 0 60 24'%3E%3Cpath fill='%23173f2a' d='M0 0h60v6l-4 16-4-14-5 12-4-13-5 17-5-14-5 10-5-14-5 16-4-12-5 11-4-12-5-3z'/%3E%3C/svg%3E") repeat-x;background-size:60px 24px}
-.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0 48px}
-.logo{font-weight:700;font-size:18px;line-height:1.2;color:#fff}
-.logo small{display:block;font-weight:400;font-size:11px;color:#b9cdbd;margin-top:2px}
-.top-phone{font-weight:600;font-size:13px;color:#fff;text-decoration:none}
-.hero h1{color:#fff;font-size:clamp(32px,5vw,46px);line-height:1.12;max-width:640px;letter-spacing:-.01em}
-.hero p{color:#cfe0d2;max-width:620px;margin:18px 0 26px;font-size:15px}
-.hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-.hero-cta .tel{color:#fff;font-weight:600;font-size:14px;text-decoration:none}
-.checks{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12px;color:#cfe0d2}
-.checks li::before{content:"✓ ";color:var(--wa);font-weight:700}
+
+.hero {
+  background: var(--g);
+  color: #fff;
+  position: relative;
+  padding-bottom: 56px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -23px;
+  height: 24px;
+  z-index: 2;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='24' viewBox='0 0 60 24'%3E%3Cpath fill='%23173f2a' d='M0 0h60v6l-4 16-4-14-5 12-4-13-5 17-5-14-5 10-5-14-5 16-4-12-5 11-4-12-5-3z'/%3E%3C/svg%3E") repeat-x;
+  background-size: 60px 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 48px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.logo small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: #b9cdbd;
+  margin-top: 2px;
+}
+
+.top-phone {
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.12;
+  max-width: 640px;
+  letter-spacing: -.01em;
+}
+
+.hero p {
+  color: #cfe0d2;
+  max-width: 620px;
+  margin: 18px 0 26px;
+  font-size: 15px;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.hero-cta .tel {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.checks {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 12px;
+  color: #cfe0d2;
+}
+
+.checks li::before {
+  content: "✓ ";
+  color: var(--wa);
+  font-weight: 700;
+}
 
 /* Seções */
-section{padding:56px 0}
-h2{font-size:clamp(24px,3.4vw,30px);line-height:1.2;margin-bottom:10px}
-.sub{margin:0 0 26px;max-width:620px}
-.card{background:#fff;border:1px solid var(--bd);border-radius:12px;box-shadow:0 1px 3px rgba(23,63,42,.06);padding:22px 26px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.card+.card{margin-top:14px}
-.item h3{font-size:15px;line-height:1.3;margin-bottom:6px}
-.item p{margin:0;font-size:13px;line-height:1.55}
-.hl{background:var(--hl);border-radius:12px;padding:22px 26px;margin-top:20px;font-family:var(--serif);font-weight:700;font-size:15.5px;line-height:1.5;color:var(--g)}
 
-#servicos{padding-top:48px}
-.svc{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 24px}
-.svc h3{font-size:16px;margin-bottom:4px}
-.svc p{margin:0;font-size:13px;line-height:1.55;max-width:760px}
-.note{font-size:13px;margin:18px 0 0}
-.note a{color:#1a7a3e}
+section {
+  padding: 56px 0;
+}
 
-.band{background:var(--band)}
-.chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip{border:1.5px solid var(--g);border-radius:999px;background:var(--cream);color:var(--g);font-weight:500;font-size:13px;padding:4px 14px;line-height:1.5}
-.band .sub{margin-bottom:20px}
-.band .small{font-size:13px;margin:16px 0 14px}
-.band .btn{box-shadow:none}
+h2 {
+  font-size: clamp(24px, 3.4vw, 30px);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
 
-.step .n{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1;color:#1fa352;margin-bottom:8px}
-.step h3{font-size:15px;margin-bottom:6px}
-.step p{margin:0;font-size:13px;line-height:1.55}
+.sub {
+  margin: 0 0 26px;
+  max-width: 620px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(23,63,42,.06);
+  padding: 22px 26px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card + .card {
+  margin-top: 14px;
+}
+
+.item h3 {
+  font-size: 15px;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.item p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.hl {
+  background: var(--hl);
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin-top: 20px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--g);
+}
+
+#servicos {
+  padding-top: 48px;
+}
+
+.svc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 24px;
+}
+
+.svc h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.svc p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+.note {
+  font-size: 13px;
+  margin: 18px 0 0;
+}
+
+.note a {
+  color: #1a7a3e;
+}
+
+/* Regiões atendidas */
+
+.band {
+  background: var(--band);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1.5px solid var(--g);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--g);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 4px 14px;
+  line-height: 1.5;
+}
+
+.band .sub {
+  margin-bottom: 20px;
+}
+
+.band .small {
+  font-size: 13px;
+  margin: 16px 0 14px;
+}
+
+.band .btn {
+  box-shadow: none;
+}
+
+/* Etapas */
+
+.step .n {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  color: #1fa352;
+  margin-bottom: 8px;
+}
+
+.step h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.step p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+}
 
 /* CTA final */
-.cta{background:var(--g);color:#cfe0d2;text-align:center;padding:60px 0}
-.cta h2{color:#fff;margin-bottom:14px}
-.cta p{max-width:560px;margin:0 auto 26px;font-size:14px}
-.cta .fine{margin:22px 0 0;font-size:12px;color:#b9cdbd}
 
-footer{text-align:center;padding:22px 0 32px;font-size:11px;color:var(--tx)}
-footer p{margin:0 0 12px}
-.priv{display:inline-block;background:#5a5f5c;color:#fff;border-radius:8px;padding:8px 16px;font-size:12px;font-weight:600;text-decoration:none}
-
-.wa-float{position:fixed;right:18px;bottom:18px;width:52px;height:52px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.28);z-index:10}
-.wa-float svg{width:28px;height:28px;fill:#fff}
-
-@media (max-width:760px){
-  .wrap{padding:0 20px}
-  .top{padding:16px 0 34px}
-  .hero{padding-bottom:44px}
-  .hero-cta{flex-direction:column;align-items:stretch;gap:14px;text-align:center}
-  .hero-cta .btn{width:100%}
-  .checks{flex-direction:column;gap:6px;margin-top:18px}
-  section{padding:44px 0}
-  .grid3{grid-template-columns:1fr;gap:22px}
-  .svc{flex-direction:column;align-items:stretch;gap:14px}
-  .svc .btn-sm{width:100%;font-size:13px;padding:11px 16px}
-  .band .btn{display:block;width:100%}
-  .cta{padding:48px 0}
-  .cta .btn{display:block;width:100%}
+.cta {
+  background: var(--g);
+  color: #cfe0d2;
+  text-align: center;
+  padding: 60px 0;
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+.cta h2 {
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.cta p {
+  max-width: 560px;
+  margin: 0 auto 26px;
+  font-size: 14px;
+}
+
+/* TELEFONE E LOCALIZAÇÃO CENTRALIZADOS */
+
+.cta .fine {
+  display: block;
+  width: 100%;
+  margin: 22px auto 0;
+  font-size: 12px;
+  color: #b9cdbd;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 22px 0 32px;
+  font-size: 11px;
+  color: var(--tx);
+}
+
+footer p {
+  margin: 0 0 12px;
+}
+
+.priv {
+  display: inline-block;
+  background: #5a5f5c;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* WhatsApp flutuante */
+
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--wa);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.28);
+  z-index: 10;
+}
+
+.wa-float svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* Responsividade */
+
+@media (max-width:760px) {
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .top {
+    padding: 16px 0 34px;
+  }
+
+  .hero {
+    padding-bottom: 44px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  .checks {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 18px;
+  }
+
+  section {
+    padding: 44px 0;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .svc {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .svc .btn-sm {
+    width: 100%;
+    font-size: 13px;
+    padding: 11px 16px;
+  }
+
+  .band .btn {
+    display: block;
+    width: 100%;
+  }
+
+  .cta {
+    padding: 48px 0;
+  }
+
+  .cta .btn {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn {
+    transition: none;
+  }
+}
 </style>
 </head>
+
 <body>
 
 <header class="hero">
   <div class="wrap">
+
     <div class="top">
-      <div class="logo">CR Jardinagem<small>Jardinagem em Curitiba</small></div>
-      <a class="top-phone" href="tel:+5541988418937">(41) 98841-8937</a>
+      <div class="logo">
+        CR Jardinagem
+        <small>Jardinagem em Curitiba</small>
+      </div>
+
+      <a class="top-phone" href="tel:+5541988418937">
+        (41) 98841-8937
+      </a>
     </div>
+
     <h1>Cuidamos do seu jardim com proximidade.</h1>
-    <p>Somos a CR Jardinagem, uma dupla de pai e filho que cuida do seu jardim com capricho, pontualidade e preço acessível. Você fala direto com os donos, agenda uma visita e recebe um orçamento, sem compromisso.</p>
+
+    <p>
+      Somos a CR Jardinagem, uma dupla de pai e filho que cuida do seu jardim com capricho, pontualidade e preço acessível. Você fala direto com os donos, agenda uma visita e recebe um orçamento, sem compromisso.
+    </p>
+
     <div class="hero-cta">
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Agendar Visita</a>
-      <a class="tel" href="tel:+5541988418937">(41) 98841-8937</a>
+      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        Agendar Visita
+      </a>
+
+      <a class="tel" href="tel:+5541988418937">
+        (41) 98841-8937
+      </a>
     </div>
+
     <ul class="checks">
       <li>Atendimento direto com os donos</li>
       <li>Orçamento sem compromisso</li>
       <li>Casas, condomínios e comércios</li>
     </ul>
+
   </div>
 </header>
 
 <main>
+
   <section id="por-que">
     <div class="wrap">
+
       <h2>Por que escolher a CR Jardinagem</h2>
-      <p class="sub">Somos uma empresa de família, da região, e tratamos cada jardim como se fosse o nosso.</p>
+
+      <p class="sub">
+        Somos uma empresa de família, da região, e tratamos cada jardim como se fosse o nosso.
+      </p>
 
       <div class="card grid3">
-        <div class="item"><h3>Direto com os donos</h3><p>Sem atendente e sem intermediário. Quem faz o orçamento é quem aparece para cuidar do seu jardim: pai e filho, do começo ao fim.</p></div>
-        <div class="item"><h3>Pontualidade</h3><p>Combinou o horário, a gente chega. Respeitamos o seu tempo e avisamos antes se algo mudar.</p></div>
-        <div class="item"><h3>Capricho nos detalhes</h3><p>Bordas, cantinhos e acabamento. É nos detalhes que o jardim fica bonito de verdade.</p></div>
-      </div>
-      <div class="card grid3">
-        <div class="item"><h3>Cuidado artesanal</h3><p>Cada jardim é único. Trabalhamos com atenção e sem receita pronta, com o jeito de quem faz com as próprias mãos.</p></div>
-        <div class="item"><h3>Agilidade no seu bairro</h3><p>Atendemos uma região específica de Curitiba, então chegamos rápido e encaixamos o seu serviço sem enrolação.</p></div>
-        <div class="item"><h3>Preço acessível, sem surpresa</h3><p>Valor combinado antes de começar, de forma clara. Estamos conquistando os nossos primeiros clientes e cada trabalho conta, por isso a gente capricha em dobro.</p></div>
+        <div class="item">
+          <h3>Direto com os donos</h3>
+          <p>Sem atendente e sem intermediário. Quem faz o orçamento é quem aparece para cuidar do seu jardim: pai e filho, do começo ao fim.</p>
+        </div>
+
+        <div class="item">
+          <h3>Pontualidade</h3>
+          <p>Combinou o horário, a gente chega. Respeitamos o seu tempo e avisamos antes se algo mudar.</p>
+        </div>
+
+        <div class="item">
+          <h3>Capricho nos detalhes</h3>
+          <p>Bordas, cantinhos e acabamento. É nos detalhes que o jardim fica bonito de verdade.</p>
+        </div>
       </div>
 
-      <div class="hl">Somos pai e filho e estamos começando na jardinagem. É por isso que cada cliente recebe 100% da nossa atenção. O seu jardim vira o nosso cartão de visitas, e a gente quer que ele fale bem de nós.</div>
+      <div class="card grid3">
+        <div class="item">
+          <h3>Cuidado artesanal</h3>
+          <p>Cada jardim é único. Trabalhamos com atenção e sem receita pronta, com o jeito de quem faz com as próprias mãos.</p>
+        </div>
+
+        <div class="item">
+          <h3>Agilidade no seu bairro</h3>
+          <p>Atendemos uma região específica de Curitiba, então chegamos rápido e encaixamos o seu serviço sem enrolação.</p>
+        </div>
+
+        <div class="item">
+          <h3>Preço acessível, sem surpresa</h3>
+          <p>Valor combinado antes de começar, de forma clara. Estamos conquistando os nossos primeiros clientes e cada trabalho conta, por isso a gente capricha em dobro.</p>
+        </div>
+      </div>
+
+      <div class="hl">
+        Somos pai e filho e estamos começando na jardinagem. É por isso que cada cliente recebe 100% da nossa atenção. O seu jardim vira o nosso cartão de visitas, e a gente quer que ele fale bem de nós.
+      </div>
+
     </div>
   </section>
 
   <section id="servicos">
     <div class="wrap">
+
       <h2>O que a gente faz pelo seu jardim</h2>
+
       <p class="sub" style="margin-bottom:20px"></p>
 
       <div class="card svc">
-        <div><h3>Corte de grama</h3><p>Gramado aparado e uniforme. Serviço avulso ou recorrente, do jeito que ficar melhor para você.</p></div>
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Agende uma visita</a>
-      </div>
-      <div class="card svc">
-        <div><h3>Poda de árvores, arbustos e cerca viva</h3><p>Poda que dá forma, mantém as plantas saudáveis e libera luz e passagem. Cerca viva bem aparada e arbustos no ponto.</p></div>
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Agende uma visita</a>
-      </div>
-      <div class="card svc">
-        <div><h3>Limpeza e manutenção de jardins</h3><p>Capina, retirada de folhas e galhos e organização dos canteiros. Seu jardim volta a ficar bonito e fácil de manter.</p></div>
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Agende uma visita</a>
+        <div>
+          <h3>Corte de grama</h3>
+          <p>Gramado aparado e uniforme. Serviço avulso ou recorrente, do jeito que ficar melhor para você.</p>
+        </div>
+
+        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+          Agende uma visita
+        </a>
       </div>
 
-      <p class="note">Atendemos casas, condomínios e estabelecimentos comerciais. Precisa de algo que não está na lista? <a href="https://wa.me/5541988418937" target="_blank" rel="noopener">Pergunte no WhatsApp.</a></p>
+      <div class="card svc">
+        <div>
+          <h3>Poda de árvores, arbustos e cerca viva</h3>
+          <p>Poda que dá forma, mantém as plantas saudáveis e libera luz e passagem. Cerca viva bem aparada e arbustos no ponto.</p>
+        </div>
+
+        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+          Agende uma visita
+        </a>
+      </div>
+
+      <div class="card svc">
+        <div>
+          <h3>Limpeza e manutenção de jardins</h3>
+          <p>Capina, retirada de folhas e galhos e organização dos canteiros. Seu jardim volta a ficar bonito e fácil de manter.</p>
+        </div>
+
+        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+          Agende uma visita
+        </a>
+      </div>
+
+      <p class="note">
+        Atendemos casas, condomínios e estabelecimentos comerciais. Precisa de algo que não está na lista?
+        <a href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+          Pergunte no WhatsApp.
+        </a>
+      </p>
+
     </div>
   </section>
 
   <section id="bairros" class="band">
     <div class="wrap">
+
       <h2>Atendemos o seu bairro</h2>
-      <p class="sub">Nosso foco é esta região de Curitiba. Trabalhando perto de você, a gente chega rápido e consegue manter a pontualidade que promete.</p>
+
+      <p class="sub">
+        Nosso foco é esta região de Curitiba. Trabalhando perto de você, a gente chega rápido e consegue manter a pontualidade que promete.
+      </p>
+
       <div class="card">
         <div class="chips">
           <span class="chip">Hauer</span>
@@ -185,31 +656,74 @@ footer p{margin:0 0 12px}
           <span class="chip">e regiões próximas</span>
         </div>
       </div>
-      <p class="small">Não viu o seu bairro? Mande uma mensagem e a gente confirma se consegue atender.</p>
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Contate nos via WhatsApp</a>
+
+      <p class="small">
+        Não viu o seu bairro? Mande uma mensagem e a gente confirma se consegue atender.
+      </p>
+
+      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        Contate nos via WhatsApp
+      </a>
+
     </div>
   </section>
 
   <section id="como-funciona">
     <div class="wrap">
-      <h2 style="margin-bottom:22px">Como funciona: simples e sem burocracia</h2>
+
+      <h2 style="margin-bottom:22px">
+        Como funciona: simples e sem burocracia
+      </h2>
+
       <div class="card grid3">
-        <div class="step"><div class="n">1</div><h3>Chame no WhatsApp</h3><p>Mande uma mensagem para (41) 98841-8937 com o seu bairro e o que você precisa. Se puder, mande uma foto do jardim, que ajuda a gente a responder mais rápido.</p></div>
-        <div class="step"><div class="n">2</div><h3>Receba o orçamento</h3><p>Rápido e sem compromisso. A gente explica o que será feito e quanto custa, com clareza, e você decide com calma.</p></div>
-        <div class="step"><div class="n">3</div><h3>Jardim cuidado</h3><p>Chegamos no horário combinado, fazemos o serviço com capricho e deixamos tudo em ordem. Você só aproveita.</p></div>
+
+        <div class="step">
+          <div class="n">1</div>
+          <h3>Chame no WhatsApp</h3>
+          <p>Mande uma mensagem para (41) 98841-8937 com o seu bairro e o que você precisa. Se puder, mande uma foto do jardim, que ajuda a gente a responder mais rápido.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">2</div>
+          <h3>Receba o orçamento</h3>
+          <p>Rápido e sem compromisso. A gente explica o que será feito e quanto custa, com clareza, e você decide com calma.</p>
+        </div>
+
+        <div class="step">
+          <div class="n">3</div>
+          <h3>Jardim cuidado</h3>
+          <p>Chegamos no horário combinado, fazemos o serviço com capricho e deixamos tudo em ordem. Você só aproveita.</p>
+        </div>
+
       </div>
-      <a class="btn btn-full" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Contate-nos via WhatsApp</a>
+
+      <a class="btn btn-full" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        Contate-nos via WhatsApp
+      </a>
+
     </div>
   </section>
 
   <section class="cta">
     <div class="wrap">
+
       <h2>Vamos deixar o seu jardim em dia?</h2>
-      <p>Chame a CR Jardinagem agora no WhatsApp e agende uma visita para fazermos seu orçamento sem compromisso. Você fala direto com os donos, pai e filho, e recebe retorno rápido.</p>
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">Agende uma visita</a>
-      <p class="fine">(41) 98841-8937 · Curitiba e Região.</p>
+
+      <p>
+        Chame a CR Jardinagem agora no WhatsApp e agende uma visita para fazermos seu orçamento sem compromisso. Você fala direto com os donos, pai e filho, e recebe retorno rápido.
+      </p>
+
+      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        Agende uma visita
+      </a>
+
+      <p class="fine">
+        (41) 98841-8937 · Curitiba e Região.
+      </p>
+
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -220,7 +734,9 @@ footer p{margin:0 0 12px}
 </footer>
 
 <a class="wa-float" href="https://wa.me/5541988418937" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.347-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
 </a>
 
 </body>
