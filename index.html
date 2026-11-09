@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173f2a">
 <title>CR Jardinagem | Jardinagem em Curitiba</title>
 <meta name="description" content="CR Jardinagem: dupla de pai e filho que cuida do seu jardim com capricho, pontualidade e preço acessível em Curitiba. Agende uma visita e receba um orçamento sem compromisso.">
 
@@ -49,7 +49,7 @@ a {
 .wrap {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 max(24px, env(safe-area-inset-right, 0px)) 0 max(24px, env(safe-area-inset-left, 0px));
 }
 
 h1, h2, h3 {
@@ -100,6 +100,7 @@ h1, h2, h3 {
   background: var(--g);
   color: #fff;
   position: relative;
+  padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: 56px;
 }
 
@@ -164,13 +165,6 @@ h1, h2, h3 {
   align-items: center;
   gap: 22px;
   flex-wrap: wrap;
-}
-
-.hero-cta .tel {
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
 }
 
 .checks {
@@ -305,6 +299,17 @@ h2 {
   line-height: 1.5;
 }
 
+.chip-group {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.chip-group .chip {
+  white-space: nowrap;
+}
+
 .band .sub {
   margin-bottom: 20px;
 }
@@ -391,14 +396,98 @@ footer p {
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+/* Janela da política de privacidade */
+
+.dlg {
+  width: min(640px, calc(100% - 32px));
+  max-height: min(82vh, 720px);
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--tx);
+  box-shadow: 0 20px 60px rgba(11,46,24,.35);
+  overflow: hidden;
+}
+
+.dlg[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.dlg::backdrop {
+  background: rgba(11,46,24,.6);
+}
+
+.dlg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px 16px 24px;
+  border-bottom: 1px solid var(--bd);
+}
+
+.dlg-head h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.dlg-x {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--hl);
+  color: var(--g);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dlg-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 24px 24px;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.dlg-body h3 {
+  font-size: 15px;
+  margin: 20px 0 6px;
+}
+
+.dlg-body p {
+  margin: 0 0 8px;
+}
+
+.dlg-body ul {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+
+.dlg-body .upd {
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+html.modal-open {
+  overflow: hidden;
 }
 
 /* WhatsApp flutuante */
 
 .wa-float {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: max(18px, env(safe-area-inset-right, 0px));
+  bottom: max(18px, env(safe-area-inset-bottom, 0px));
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -418,8 +507,21 @@ footer p {
 /* Responsividade */
 
 @media (max-width:760px) {
+  .card-bairros {
+    padding: 18px 16px;
+  }
+
+  .chip-group {
+    gap: 8px;
+  }
+
+  .chip-group .chip {
+    font-size: clamp(11px, 3.2vw, 13px);
+    padding: 4px 9px;
+  }
+
   .wrap {
-    padding: 0 20px;
+    padding: 0 max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px));
   }
 
   .top {
@@ -518,12 +620,8 @@ footer p {
     </p>
 
     <div class="hero-cta">
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+      <a class="btn" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20agendar%20uma%20visita%20para%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">
         Agendar Visita
-      </a>
-
-      <a class="tel" href="tel:+5541988418937">
-        (41) 98841-8937
       </a>
     </div>
 
@@ -601,7 +699,7 @@ footer p {
           <p>Gramado aparado e uniforme. Serviço avulso ou recorrente, do jeito que ficar melhor para você.</p>
         </div>
 
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        <a class="btn btn-sm" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20agendar%20uma%20visita%20para%20or%C3%A7amento%20de%20corte%20de%20grama." target="_blank" rel="noopener">
           Agende uma visita
         </a>
       </div>
@@ -612,7 +710,7 @@ footer p {
           <p>Poda que dá forma, mantém as plantas saudáveis e libera luz e passagem. Cerca viva bem aparada e arbustos no ponto.</p>
         </div>
 
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        <a class="btn btn-sm" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20agendar%20uma%20visita%20para%20or%C3%A7amento%20de%20poda%20de%20%C3%A1rvores%2C%20arbustos%20ou%20cerca%20viva." target="_blank" rel="noopener">
           Agende uma visita
         </a>
       </div>
@@ -623,14 +721,14 @@ footer p {
           <p>Capina, retirada de folhas e galhos e organização dos canteiros. Seu jardim volta a ficar bonito e fácil de manter.</p>
         </div>
 
-        <a class="btn btn-sm" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        <a class="btn btn-sm" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20agendar%20uma%20visita%20para%20or%C3%A7amento%20de%20limpeza%20e%20manuten%C3%A7%C3%A3o%20de%20jardim." target="_blank" rel="noopener">
           Agende uma visita
         </a>
       </div>
 
       <p class="note">
         Atendemos casas, condomínios e estabelecimentos comerciais. Precisa de algo que não está na lista?
-        <a href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+        <a href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20saber%20se%20voc%C3%AAs%20fazem%20um%20servi%C3%A7o%20que%20n%C3%A3o%20est%C3%A1%20na%20lista." target="_blank" rel="noopener">
           Pergunte no WhatsApp.
         </a>
       </p>
@@ -647,13 +745,15 @@ footer p {
         Nosso foco é esta região de Curitiba. Trabalhando perto de você, a gente chega rápido e consegue manter a pontualidade que promete.
       </p>
 
-      <div class="card">
+      <div class="card card-bairros">
         <div class="chips">
           <span class="chip">Hauer</span>
           <span class="chip">Uberaba</span>
           <span class="chip">Xaxim</span>
-          <span class="chip">Jardim das Américas</span>
-          <span class="chip">e regiões próximas</span>
+          <span class="chip-group">
+            <span class="chip">Jardim das Américas</span>
+            <span class="chip">e regiões próximas</span>
+          </span>
         </div>
       </div>
 
@@ -661,8 +761,8 @@ footer p {
         Não viu o seu bairro? Mande uma mensagem e a gente confirma se consegue atender.
       </p>
 
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
-        Contate nos via WhatsApp
+      <a class="btn" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20confirmar%20se%20voc%C3%AAs%20atendem%20o%20meu%20bairro." target="_blank" rel="noopener">
+        Contate-nos via WhatsApp
       </a>
 
     </div>
@@ -697,7 +797,7 @@ footer p {
 
       </div>
 
-      <a class="btn btn-full" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+      <a class="btn btn-full" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20um%20or%C3%A7amento.%20Meu%20bairro%20%C3%A9%3A%20" target="_blank" rel="noopener">
         Contate-nos via WhatsApp
       </a>
 
@@ -713,7 +813,7 @@ footer p {
         Chame a CR Jardinagem agora no WhatsApp e agende uma visita para fazermos seu orçamento sem compromisso. Você fala direto com os donos, pai e filho, e recebe retorno rápido.
       </p>
 
-      <a class="btn" href="https://wa.me/5541988418937" target="_blank" rel="noopener">
+      <a class="btn" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20agendar%20uma%20visita%20para%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener">
         Agende uma visita
       </a>
 
@@ -729,15 +829,99 @@ footer p {
 <footer>
   <div class="wrap">
     <p>CR Jardinagem · Curitiba/PR · WhatsApp (41) 98841-8937</p>
-    <a class="priv" href="#">Política de privacidade</a>
+    <button type="button" class="priv" id="abrir-privacidade" aria-haspopup="dialog">Política de privacidade</button>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5541988418937" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+<a class="wa-float" href="https://wa.me/5541988418937?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CR%20Jardinagem%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.347-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
 </a>
+
+<dialog id="privacidade" class="dlg" aria-labelledby="privacidade-titulo">
+  <div class="dlg-head">
+    <h2 id="privacidade-titulo">Política de privacidade</h2>
+    <button type="button" class="dlg-x" id="fechar-privacidade" aria-label="Fechar">&times;</button>
+  </div>
+
+  <div class="dlg-body">
+    <p class="upd">Última atualização: novembro de 2026.</p>
+
+    <h3>Quem somos</h3>
+    <p>A CR Jardinagem é um serviço de jardinagem de Curitiba/PR, tocado por pai e filho. Esta página apresenta os nossos serviços e leva você ao nosso WhatsApp para pedir um orçamento. Somos os responsáveis pelos dados pessoais tratados no atendimento, conforme a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).</p>
+
+    <h3>O que este site coleta</h3>
+    <p>Este site não tem formulários, não pede cadastro e não usa cookies de rastreamento nem ferramentas de análise. Para mostrar as fontes de texto, a página carrega arquivos do Google Fonts, e o Google pode receber o seu endereço IP e dados técnicos do navegador, conforme a política de privacidade dele.</p>
+
+    <h3>Dados que recebemos pelo WhatsApp</h3>
+    <p>Ao clicar nos botões de contato, você abre uma conversa no WhatsApp. Recebemos apenas o que você mesmo enviar, como:</p>
+    <ul>
+      <li>nome e número de telefone;</li>
+      <li>bairro ou endereço do serviço;</li>
+      <li>tipo de serviço desejado e fotos do jardim;</li>
+      <li>o conteúdo das mensagens.</li>
+    </ul>
+
+    <h3>Para que usamos esses dados</h3>
+    <p>Usamos os dados para responder você, agendar a visita, fazer o orçamento e executar o serviço combinado. O tratamento se baseia na LGPD, para a realização de procedimentos preliminares e da execução do serviço a pedido de quem nos procura. Não usamos os seus dados para publicidade de terceiros.</p>
+
+    <h3>Compartilhamento</h3>
+    <p>Não vendemos nem repassamos os seus dados a terceiros. A conversa acontece dentro do WhatsApp, que pertence à Meta e tem a própria política de privacidade.</p>
+
+    <h3>Por quanto tempo guardamos</h3>
+    <p>Guardamos as informações do atendimento apenas pelo tempo necessário para prestar o serviço e cumprir obrigações legais. Depois disso, elas são apagadas ou deixam de ser usadas.</p>
+
+    <h3>Seus direitos</h3>
+    <p>Você pode pedir a qualquer momento a confirmação de que tratamos os seus dados, o acesso a eles, a correção de informações incorretas, a eliminação dos dados e a revogação de consentimento, nos termos do art. 18 da LGPD.</p>
+
+    <h3>Alterações</h3>
+    <p>Se esta política mudar, a versão nova ficará publicada aqui, com a data de atualização.</p>
+
+    <h3>Contato</h3>
+    <p>Para qualquer dúvida ou pedido sobre os seus dados, fale com a gente pelo WhatsApp (41) 98841-8937.</p>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('privacidade');
+  var abrir = document.getElementById('abrir-privacidade');
+  var fechar = document.getElementById('fechar-privacidade');
+  if (!dlg || !abrir || !fechar) return;
+
+  function fecharJanela() {
+    if (typeof dlg.close === 'function') {
+      dlg.close();
+    } else {
+      dlg.removeAttribute('open');
+    }
+    document.documentElement.classList.remove('modal-open');
+  }
+
+  abrir.addEventListener('click', function () {
+    if (typeof dlg.showModal === 'function') {
+      dlg.showModal();
+    } else {
+      dlg.setAttribute('open', '');
+    }
+    document.documentElement.classList.add('modal-open');
+    dlg.querySelector('.dlg-body').scrollTop = 0;
+  });
+
+  fechar.addEventListener('click', fecharJanela);
+
+  /* clique no fundo escuro fecha a janela */
+  dlg.addEventListener('click', function (e) {
+    if (e.target === dlg) fecharJanela();
+  });
+
+  /* Esc também fecha */
+  dlg.addEventListener('close', function () {
+    document.documentElement.classList.remove('modal-open');
+  });
+})();
+</script>
 
 </body>
 </html>
